@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 from collections import Counter
 
-# Загрузка данных и указываете путь до файла 
+# Загрузка данных и указываете путь до файла. В квадратных скобках название столбца для анализа 
 df = pd.read_excel(r"C:\ros\messages2.xlsx") 
 texts = df['Текст сообщения'].dropna().astype(str).tolist()
 
@@ -32,3 +32,4 @@ for i in range(10):
     # Ключевые слова
 
     print(f"  Ключевые слова: ...")
+
