@@ -5,9 +5,9 @@ from sklearn.cluster import DBSCAN
 from sklearn.decomposition import PCA
 
 # 1. Загрузка данных
-file_path = r'C:\rostelecom\messages2.xlsx'
+file_path = r'C:\ros\messages2.xlsx'
 df = pd.read_excel(file_path)
-# Удаляем пустые строки, если есть
+# Удаляем пустые строки, если есть. В квадартных скобках название столбца для анализа
 df = df.dropna(subset=['Текст сообщения'])
 texts = df['Текст сообщения'].astype(str).tolist()
 
