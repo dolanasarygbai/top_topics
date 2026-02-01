@@ -3,8 +3,8 @@ import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 
-# 1. Загрузка данных
-file_path = r'C:\rostelecom\messages2.xlsx'
+# 1. Загрузка данных. Указываете путь до файла для анализа. В квадратных скобках название столбца для анализа
+file_path = r'C:\ros\messages2.xlsx'
 df = pd.read_excel(file_path)
 texts = df['Текст сообщения'].astype(str).tolist()
 
@@ -36,3 +36,4 @@ for i in range(num_clusters):
     # Выводим 7 ключевых слов, которые формируют смысл темы
     topic_words = [terms[ind] for ind in order_centroids[i, :7]]
     print(", ".join(topic_words))
+
