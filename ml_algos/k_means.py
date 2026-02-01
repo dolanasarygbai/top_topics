@@ -1,12 +1,12 @@
-# Упрощенный скрипт только с базовой кластеризацией
+ # Упрощенный скрипт только с базовой кластеризацией
 
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 from collections import Counter
 
-# Загрузка данных
-df = pd.read_excel(r"C:\rostelecom\messages2.xlsx")
+# Загрузка данных и указываете путь до файла 
+df = pd.read_excel(r"C:\ros\messages2.xlsx") 
 texts = df['Текст сообщения'].dropna().astype(str).tolist()
 
 # Ограничиваем количество для скорости
@@ -30,4 +30,5 @@ for i in range(10):
         print(f"  - {texts[idx][:100]}...")
     
     # Ключевые слова
+
     print(f"  Ключевые слова: ...")
